@@ -16,7 +16,6 @@
 	"devDependencies": {
 		"@tailwindcss/postcss7-compat": "^2.0.3",
 		"@types/vue": "^2.0.0",
-		"@vue/cli": "^4.5.11",
 		"@vue/cli-plugin-babel": "~4.5.0",
 		"@vue/cli-plugin-pwa": "~4.5.0",
 		"@vue/cli-plugin-router": "~4.5.0",

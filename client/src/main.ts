@@ -2,6 +2,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import components from './components'
+import { _serverBase } from './consts'
 
 // Stylesheets
 import './assets/css/tailwind.css'
@@ -22,3 +23,6 @@ app.use(router)
 
 // Mounting app
 app.mount('#app')
+
+console.log('Mode		:', process.env.NODE_ENV)
+console.log('Server 		:', _serverBase)

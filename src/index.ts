@@ -45,8 +45,8 @@ app.use(handleError);
 
 app.listen(_port, async () => {
 
-	console.log('Mode		:', app.get('env'))
 	console.log('Dir 		:', __dirname)
+	console.log('Mode		:', app.get('env'))
 	console.log('Server		: Running')
 	console.log('URL 		:', _baseUrl)
 

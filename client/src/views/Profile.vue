@@ -15,6 +15,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { _serverBase } from "../consts";
 export default defineComponent({
 	name: "Profile",
 	data() {
@@ -23,15 +24,9 @@ export default defineComponent({
 		};
 	},
 	created() {
-		console.log(this);
-		fetch("http://localhost:3500/api/v1/profile")
+		fetch(_serverBase + "/api/v1/profile")
 			.then((data) => data.json())
 			.then((res) => (this.user = res));
 	},
 });
 </script>
-
-<style lang='scss' scoped>
-	.Profile {
-	}
-</style>
