@@ -7,13 +7,11 @@ const connect = async () => {
 			connectUri,
 			connectOptions
 		)
-		console.log('\nDatabase Connected')
+		console.log('Database 	: Connected')
 	}
 	catch (error) {
-		console.log(
-			'\nDatabase connection failed',
-			error.message
-		)
+		console.log('Database	: Connection failed')
+		console.log('Database	:', error.message)
 	}
 
 }

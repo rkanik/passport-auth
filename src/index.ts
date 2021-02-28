@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-import express, { NextFunction, Request, Response } from 'express';
+import express from 'express';
 import session from 'express-session';
 import cors from 'cors';
 import helmet from 'helmet'
@@ -41,8 +41,9 @@ app.use(handleError);
 
 app.listen(_port, async () => {
 
-	console.log('\nServer started at')
-	console.log(_baseUrl)
+	console.log('\nMode		:', app.get('env'))
+	console.log('Server		: Running')
+	console.log('URL 		:', _baseUrl)
 
 	await mongodb.connect()
 })
