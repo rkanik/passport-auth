@@ -6,9 +6,8 @@
 	"scripts": {
 		"start": "node ./dist --NODE_ENV prod",
 		"dev": "nodemon --config nodemon.json",
-		"build": "node ./util/build.js && yarn install && yarn build:client",
-		"build:dev": "node ./util/build.js && yarn build:client",
-		"build:client": "cd client && yarn build",
+		"build": "node ./util/build.js && yarn build:client",
+		"build:client": "cd client && yarn install && yarn build",
 		"serve": "cd client && yarn serve"
 	},
 	"keywords": [],
