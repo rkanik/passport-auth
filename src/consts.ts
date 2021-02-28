@@ -8,7 +8,7 @@ export const _isDev = app.get('env') === 'development'
 export const _port = process.env.PORT || '3500'
 export const _baseUrl = _isDev
 	? `http://localhost:${_port}`
-	: 'https://someawesomeurl.com'
+	: 'https://rk-passport-auth.herokuapp.com'
 
 export const _sessionSecret = process.env.SESSION_SECRET || ''
 export const _cookieSecret = process.env.COOKIE_SECRET || ''
