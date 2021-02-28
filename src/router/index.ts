@@ -15,10 +15,11 @@ const router = Router()
 router.use('/auth', AuthRouter)
 router.use('/api/v1/users', UsersRouter)
 
-const indexHtml = path.join(__dirname, _isProd
-	? '../client/dist/index.html'
-	: '../../client/dist/index.html'
-)
+const indexHtml = _isProd
+	? path.join(__dirname, '../public/index.html')
+	: path.join(__dirname, '../../client/dist/index.html')
+
+console.log('\nHTML 		:', indexHtml)
 
 router.get('/api/v1/profile', (req, res) => {
 	if (!req.user) throw new HTTPError(

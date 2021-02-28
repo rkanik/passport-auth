@@ -9,14 +9,18 @@ import path from 'path'
 import passport from './auth/passport'
 import router from './router'
 
-import { app, _baseUrl, _port } from './consts';
+import { app, _baseUrl, _isProd, _port } from './consts';
 
 import { mongodb } from './database'
 import { handleError } from './middlewares/error.middleware';
 
-const views = path.join(__dirname, '../client/dist')
+const publicPath = _isProd
+	? path.join(__dirname, '/public')
+	: path.join(__dirname, '../client/dist')
 
-app.use('/', express.static(views))
+console.log('Public 		:', publicPath)
+
+app.use('/', express.static(publicPath))
 
 app.use(cors({
 	origin: 'http://localhost:8080'
@@ -41,7 +45,7 @@ app.use(handleError);
 
 app.listen(_port, async () => {
 
-	console.log('\nMode		:', app.get('env'))
+	console.log('Mode		:', app.get('env'))
 	console.log('Dir 		:', __dirname)
 	console.log('Server		: Running')
 	console.log('URL 		:', _baseUrl)
