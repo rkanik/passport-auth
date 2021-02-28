@@ -8,14 +8,16 @@ import UsersRouter from './users'
 
 // Helpers
 import { HTTPError } from '../helpers'
+import { _isProd } from '../consts'
 
 const router = Router()
 
 router.use('/auth', AuthRouter)
 router.use('/api/v1/users', UsersRouter)
 
-const indexHtml = path.join(__dirname,
-	'../../client/dist/index.html'
+const indexHtml = path.join(__dirname, _isProd
+	? '../client/dist/index.html'
+	: '../../client/dist/index.html'
 )
 
 router.get('/api/v1/profile', (req, res) => {
